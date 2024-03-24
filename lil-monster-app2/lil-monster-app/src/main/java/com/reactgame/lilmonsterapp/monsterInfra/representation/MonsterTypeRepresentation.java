@@ -1,6 +1,6 @@
 package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
-import com.reactgame.lilmonsterapp.core.entity.MonsterType;
+import com.reactgame.lilmonsterapp.core.entity.entity.MonsterType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

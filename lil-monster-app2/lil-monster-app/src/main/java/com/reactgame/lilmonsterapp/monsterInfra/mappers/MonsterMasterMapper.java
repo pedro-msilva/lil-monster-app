@@ -1,6 +1,6 @@
 package com.reactgame.lilmonsterapp.monsterInfra.mappers;
 
-import com.reactgame.lilmonsterapp.core.entity.MonsterMaster;
+import com.reactgame.lilmonsterapp.core.entity.entity.MonsterMaster;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterMasterRepresentation;
 
 public class MonsterMasterMapper {

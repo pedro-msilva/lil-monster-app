@@ -1,4 +1,4 @@
-package com.reactgame.lilmonsterapp.core.entity;
+package com.reactgame.lilmonsterapp.core.entity.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

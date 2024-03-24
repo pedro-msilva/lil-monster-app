@@ -1,8 +1,8 @@
 package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
-import com.reactgame.lilmonsterapp.core.entity.LilMonster;
-import com.reactgame.lilmonsterapp.core.entity.MonsterMaster;
-import com.reactgame.lilmonsterapp.core.entity.MonsterType;
+import com.reactgame.lilmonsterapp.core.entity.entity.LilMonster;
+import com.reactgame.lilmonsterapp.core.entity.entity.MonsterMaster;
+import com.reactgame.lilmonsterapp.core.entity.entity.MonsterType;
 import com.reactgame.lilmonsterapp.monsterInfra.monstersInterfaces.LilMonsterActions;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

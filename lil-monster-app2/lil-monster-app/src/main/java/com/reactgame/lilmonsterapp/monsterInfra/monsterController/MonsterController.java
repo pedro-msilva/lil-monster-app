@@ -1,6 +1,5 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monsterController;
 
-import com.reactgame.lilmonsterapp.core.entity.MonsterType;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterTypeRepresentation;
 import org.springframework.web.bind.annotation.*;
