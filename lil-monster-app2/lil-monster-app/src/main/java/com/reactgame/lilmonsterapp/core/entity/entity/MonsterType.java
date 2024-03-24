@@ -26,6 +26,10 @@ public class MonsterType {
     public MonsterType(String type, List<MonsterType> weakness, List<MonsterType> strengths) {
     }
 
+    public MonsterType() {
+
+    }
+
     public String getId() {
         return id;
     }
