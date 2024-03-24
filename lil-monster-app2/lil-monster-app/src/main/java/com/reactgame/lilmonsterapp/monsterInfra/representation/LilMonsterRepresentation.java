@@ -3,7 +3,7 @@ package com.reactgame.lilmonsterapp.monsterInfra.representation;
 import com.reactgame.lilmonsterapp.core.entity.LilMonster;
 import com.reactgame.lilmonsterapp.core.entity.MonsterMaster;
 import com.reactgame.lilmonsterapp.core.entity.MonsterType;
-import com.reactgame.lilmonsterapp.monsterInfra.LilMonsterActions;
+import com.reactgame.lilmonsterapp.monsterInfra.monstersInterfaces.LilMonsterActions;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LilMonsterRepresentation implements LilMonsterActions {
+
+    private String id;
     private String name;
     private Integer healthPoints;
     private Integer stamina;
@@ -29,7 +31,15 @@ public class LilMonsterRepresentation implements LilMonsterActions {
     private List<MonsterType> weakness;
     private List<MonsterType> strengths;
 
-    public LilMonsterRepresentation(String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, MonsterMaster monsterMaster, String type, List<MonsterType> weakness, List<MonsterType> strengths) {
+    public LilMonsterRepresentation(String id,String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, MonsterMaster monsterMaster, String type, List<MonsterType> weakness, List<MonsterType> strengths) {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

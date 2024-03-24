@@ -1,6 +1,6 @@
-package com.reactgame.lilmonsterapp.core.entity;
+package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
-import jakarta.persistence.*;
+import com.reactgame.lilmonsterapp.core.entity.MonsterType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,22 +8,18 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Table(name="monsters_types")
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MonsterType {
+public class MonsterTypeRepresentation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String type;
     private List<MonsterType> weakness;
     private List<MonsterType> strengths;
 
-    public MonsterType(String type, List<MonsterType> weakness, List<MonsterType> strengths) {
+    public MonsterTypeRepresentation(String id, String type, List<MonsterType> weakness, List<MonsterType> strengths) {
     }
 
     public String getId() {
