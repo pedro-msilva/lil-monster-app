@@ -13,12 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 public class MonsterMasterRepresentation implements MonsterMasterActions {
 
-    private String id;
+    private Long id;
     private String name;
     private String profilePicId;
     private List<LilMonster> lilMonsters;
 
-    public MonsterMasterRepresentation(String id,String name, String profilePicId, List<LilMonster> lilMonsters) {
+    public MonsterMasterRepresentation(Long id,String name, String profilePicId, List<LilMonster> lilMonsters) {
     }
 
     @Override
@@ -26,11 +26,11 @@ public class MonsterMasterRepresentation implements MonsterMasterActions {
         return null;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

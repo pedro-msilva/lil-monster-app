@@ -8,34 +8,35 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Table(name="monsters_types")
-@Entity
+//@Table(name="monsters_types")
+//@Entity
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class MonsterType {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
     private String type;
-    private List<MonsterType> weakness;
-    private List<MonsterType> strengths;
+    private List<String> weakness;
+    private List<String> strengths;
 
-    public MonsterType(String type, List<MonsterType> weakness, List<MonsterType> strengths) {
+    public MonsterType(String type, List<String> weakness, List<String> strengths) {
     }
 
     public MonsterType() {
 
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getType() {
         return type;
@@ -45,19 +46,19 @@ public class MonsterType {
         this.type = type;
     }
 
-    public List<MonsterType> getWeakness() {
+    public List<String> getWeakness() {
         return weakness;
     }
 
-    public void setWeakness(List<MonsterType> weakness) {
+    public void setWeakness(List<String> weakness) {
         this.weakness = weakness;
     }
 
-    public List<MonsterType> getStrengths() {
+    public List<String> getStrengths() {
         return strengths;
     }
 
-    public void setStrengths(List<MonsterType> strengths) {
+    public void setStrengths(List<String> strengths) {
         this.strengths = strengths;
     }
 }

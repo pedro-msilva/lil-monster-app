@@ -18,7 +18,7 @@ public class MonsterMaster{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String monsterMaster_Id;
+    private Long monsterMaster_Id;
     private String name;
     private String profilePicId;
     @OneToMany(mappedBy = "monsterMaster", cascade = CascadeType.ALL)
@@ -27,11 +27,11 @@ public class MonsterMaster{
     public MonsterMaster(String name, String profilePicId, List<LilMonster> lilMonsters) {
     }
 
-    public String getMonsterMaster_Id() {
+    public Long getMonsterMaster_Id() {
         return monsterMaster_Id;
     }
 
-    public void setMonsterMaster_Id(String monsterMaster_Id) {
+    public void setMonsterMaster_Id(Long monsterMaster_Id) {
         this.monsterMaster_Id = monsterMaster_Id;
     }
 

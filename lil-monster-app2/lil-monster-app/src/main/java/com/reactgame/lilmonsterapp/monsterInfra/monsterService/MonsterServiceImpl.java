@@ -1,14 +1,10 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monsterService;
 
 import com.reactgame.lilmonsterapp.core.entity.entity.LilMonster;
-import com.reactgame.lilmonsterapp.core.entity.entity.MonsterType;
 import com.reactgame.lilmonsterapp.core.entity.repository.LilMonsterRepository;
-import com.reactgame.lilmonsterapp.core.entity.repository.MonsterTypeRepository;
 import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.mappers.LilMonsterMapper;
-import com.reactgame.lilmonsterapp.monsterInfra.mappers.MonsterTypeMapper;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
-import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterTypeRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -21,10 +17,6 @@ public class MonsterServiceImpl implements MonsterService{
     private LilMonsterRepository monsterRepository;
     @Autowired
     private LilMonsterMapper monsterMapper;
-    @Autowired
-    private MonsterTypeRepository monsterTypeRepository;
-    @Autowired
-    private MonsterTypeMapper monsterTypeMapper;
 
     @Override
     public List<LilMonsterRepresentation> obterTodosMonstros() {
@@ -43,25 +35,9 @@ public class MonsterServiceImpl implements MonsterService{
         return listaTodosMonstrosRepresentation ;
     }
 
-    @Override
-    public List<MonsterTypeRepresentation> obterTodosTipos() {
-
-        var listaTipoMonstroEntity = monsterTypeRepository.findAll();
-
-        var listaTipoMonstroRepresentation = new ArrayList<MonsterTypeRepresentation>();
-
-        for(MonsterType monsterTypeEntity:listaTipoMonstroEntity){
-
-            var monsterTypeRepresentation = monsterTypeMapper.toRepresentation(monsterTypeEntity);
-
-            listaTipoMonstroRepresentation.add(monsterTypeRepresentation);
-        }
-
-        return listaTipoMonstroRepresentation;
-    }
 
     @Override
-    public LilMonsterRepresentation obterMonstro(String monsterId) {
+    public LilMonsterRepresentation obterMonstro(Long monsterId) {
 
         Optional<LilMonster> lilMonsterOptional = monsterRepository.findById(monsterId);
 

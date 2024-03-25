@@ -1,7 +1,6 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monsterController;
 
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
-import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterTypeRepresentation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,15 +15,9 @@ public class MonsterController {
         return null;
     }
 
-    //retorna todos tipos de monstros
-    @GetMapping(value = "obterTipos")
-    public List<MonsterTypeRepresentation> obterTodosTipos(){
-        return null;
-    }
-
     //retorna monstro especifico
     @GetMapping(value = "obterMonstro/{monsterId}")
-    public LilMonsterRepresentation obterMonstro(@PathVariable String monsterId){
+    public LilMonsterRepresentation obterMonstro(@PathVariable Long monsterId){
         return null;
     }
 

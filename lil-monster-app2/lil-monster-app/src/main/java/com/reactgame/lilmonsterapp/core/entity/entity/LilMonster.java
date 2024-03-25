@@ -13,7 +13,7 @@ import lombok.Setter;
 public class LilMonster extends MonsterType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String lilMonster_Id;
+    private Long lilMonster_Id;
     private String name;
     private Integer healthPoints;
     private Integer stamina;
@@ -30,11 +30,11 @@ public class LilMonster extends MonsterType {
         super();
     }
 
-    public String getLilMonster_Id() {
+    public Long getLilMonster_Id() {
         return lilMonster_Id;
     }
 
-    public void setLilMonster_Id(String lilMonster_Id) {
+    public void setLilMonster_Id(Long lilMonster_Id) {
         this.lilMonster_Id = lilMonster_Id;
     }
 

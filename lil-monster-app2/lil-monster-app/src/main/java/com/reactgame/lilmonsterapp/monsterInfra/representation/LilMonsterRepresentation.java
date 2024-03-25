@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class LilMonsterRepresentation implements LilMonsterActions {
 
-    private String id;
+    private Long id;
     private String name;
     private Integer healthPoints;
     private Integer stamina;
@@ -28,17 +28,17 @@ public class LilMonsterRepresentation implements LilMonsterActions {
     private String description;
     private String monsterMaster;
     private String type;
-    private List<MonsterType> weakness;
-    private List<MonsterType> strengths;
+    private List<String> weakness;
+    private List<String> strengths;
 
-    public LilMonsterRepresentation(String id,String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, MonsterMaster monsterMaster, String type, List<MonsterType> weakness, List<MonsterType> strengths) {
+    public LilMonsterRepresentation(Long id,String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, MonsterMaster monsterMaster, String type, List<String> weakness, List<String> strengths) {
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -122,19 +122,19 @@ public class LilMonsterRepresentation implements LilMonsterActions {
         this.type = type;
     }
 
-    public List<MonsterType> getWeakness() {
+    public List<String> getWeakness() {
         return weakness;
     }
 
-    public void setWeakness(List<MonsterType> weakness) {
+    public void setWeakness(List<String> weakness) {
         this.weakness = weakness;
     }
 
-    public List<MonsterType> getStrengths() {
+    public List<String> getStrengths() {
         return strengths;
     }
 
-    public void setStrengths(List<MonsterType> strengths) {
+    public void setStrengths(List<String> strengths) {
         this.strengths = strengths;
     }
 
