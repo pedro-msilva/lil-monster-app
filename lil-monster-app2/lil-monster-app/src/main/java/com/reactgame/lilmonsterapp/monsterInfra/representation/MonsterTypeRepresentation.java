@@ -1,17 +1,13 @@
 package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
 import com.reactgame.lilmonsterapp.core.entity.entity.MonsterType;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class MonsterTypeRepresentation {
 
     private String id;
