@@ -1,43 +1,46 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monsterController;
 
-import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.monsterService.MonsterService;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/lilmonster")
+@RequestMapping(value = "/api/lilmonster")
 public class MonsterController {
 
     @Autowired
-    MonsterService monsterService;
+    private MonsterService monsterService;
     //retorna todos os monstros
-    @GetMapping(value = "obterMonstros")
-    public @ResponseBody List<LilMonsterRepresentation> obterTodosMonstros(){
-        return monsterService.obterTodosMonstros();
+    @GetMapping(value = "/obterMonstros")
+    @ApiOperation(value="Retorna todos os Monstros")
+    public ResponseEntity<List<LilMonsterRepresentation>> obterTodosMonstros(){
+        return new ResponseEntity<>(monsterService.obterTodosMonstros(), HttpStatus.OK);
     }
 
     //retorna monstro especifico
-    @GetMapping(value = "obterMonstro/{monsterId}")
-    public @ResponseBody LilMonsterRepresentation obterMonstro(@PathVariable Long monsterId){
+    @GetMapping(value = "/obterMonstro/{monsterId}")
+    public ResponseEntity<LilMonsterRepresentation> obterMonstro(@PathVariable Long monsterId){
 
-        return monsterService.obterMonstro(monsterId);
+        return new ResponseEntity<>(monsterService.obterMonstro(monsterId), HttpStatus.OK) ;
     }
 
     //criar um monstro
     @PostMapping(value = "/criarMonstro")
-    public @ResponseBody LilMonsterRepresentation criarMonstro(@RequestBody LilMonsterRepresentation novoMonstro){
+    public ResponseEntity<LilMonsterRepresentation> criarMonstro(@RequestBody LilMonsterRepresentation novoMonstro){
 
-        return monsterService.criarMonstro(novoMonstro);
+        return new ResponseEntity<>(monsterService.criarMonstro(novoMonstro), HttpStatus.OK);
     }
 
     //atualizar um monstro
     @PostMapping(value = "/atualizarMonstro")
-    public @ResponseBody LilMonsterRepresentation atualizarMonstro(@RequestBody LilMonsterRepresentation novoMonstro){
-            return monsterService.atualizarMonstro(novoMonstro);
+    public ResponseEntity<LilMonsterRepresentation> atualizarMonstro(@RequestBody LilMonsterRepresentation novoMonstro){
+            return new ResponseEntity<>(monsterService.atualizarMonstro(novoMonstro),HttpStatus.OK);
     }
 
 

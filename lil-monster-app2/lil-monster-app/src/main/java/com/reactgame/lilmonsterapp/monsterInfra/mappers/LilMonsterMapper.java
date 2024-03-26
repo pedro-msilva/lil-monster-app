@@ -1,8 +1,10 @@
 package com.reactgame.lilmonsterapp.monsterInfra.mappers;
 
-import com.reactgame.lilmonsterapp.core.entity.entity.LilMonster;
+import com.reactgame.lilmonsterapp.core.entity.LilMonster;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LilMonsterMapper {
 
     public LilMonsterRepresentation toRepresentation(LilMonster lilMonsterEntity){

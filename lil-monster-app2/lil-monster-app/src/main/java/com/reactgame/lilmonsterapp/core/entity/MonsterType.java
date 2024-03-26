@@ -1,4 +1,4 @@
-package com.reactgame.lilmonsterapp.core.entity.entity;
+package com.reactgame.lilmonsterapp.core.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,17 +8,12 @@ import lombok.Setter;
 
 import java.util.List;
 
-//@Table(name="monsters_types")
-//@Entity
+
 @Getter
 @Setter
 @MappedSuperclass
-//@Inheritance(strategy = InheritanceType.JOINED)
 public class MonsterType {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
     private String type;
     private List<String> weakness;
     private List<String> strengths;
@@ -29,14 +24,6 @@ public class MonsterType {
     public MonsterType() {
 
     }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 
     public String getType() {
         return type;

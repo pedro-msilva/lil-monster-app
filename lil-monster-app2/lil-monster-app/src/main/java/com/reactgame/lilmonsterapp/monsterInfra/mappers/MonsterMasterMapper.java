@@ -1,8 +1,10 @@
 package com.reactgame.lilmonsterapp.monsterInfra.mappers;
 
-import com.reactgame.lilmonsterapp.core.entity.entity.MonsterMaster;
+import com.reactgame.lilmonsterapp.core.entity.MonsterMaster;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterMasterRepresentation;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MonsterMasterMapper {
 
     public MonsterMasterRepresentation toRepresentation(MonsterMaster monsterMaster){

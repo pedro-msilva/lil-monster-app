@@ -1,16 +1,18 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monsterService;
 
-import com.reactgame.lilmonsterapp.core.entity.entity.LilMonster;
-import com.reactgame.lilmonsterapp.core.entity.repository.LilMonsterRepository;
+import com.reactgame.lilmonsterapp.core.entity.LilMonster;
+import com.reactgame.lilmonsterapp.core.repository.LilMonsterRepository;
 import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.mappers.LilMonsterMapper;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MonsterServiceImpl implements MonsterService{
 
     @Autowired

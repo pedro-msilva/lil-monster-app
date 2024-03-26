@@ -1,7 +1,7 @@
 package com.reactgame.lilmonsterapp.monsterInfra.monstersInterfaces;
 
 
-import com.reactgame.lilmonsterapp.core.entity.entity.LilMonster;
+import com.reactgame.lilmonsterapp.core.entity.LilMonster;
 
 public interface LilMonsterActions {
 
