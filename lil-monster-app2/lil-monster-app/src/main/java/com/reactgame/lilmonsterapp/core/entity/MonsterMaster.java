@@ -6,14 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Table(name="masters")
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class MonsterMaster{
 
     @Id
@@ -21,10 +20,14 @@ public class MonsterMaster{
     private Long monsterMaster_Id;
     private String name;
     private String profilePicId;
-    @OneToMany(mappedBy = "monsterMaster", cascade = CascadeType.ALL)
-    private List<LilMonster> lilMonsters;
 
-    public MonsterMaster(String name, String profilePicId, List<LilMonster> lilMonsters) {
+    @OneToMany(mappedBy = "monsterMasterId", cascade = CascadeType.ALL)
+    private List<LilMonster> lilMonsters = new ArrayList<>();
+
+    public MonsterMaster(Long monsterMaster_Id, String name, String profilePicId) {
+        this.monsterMaster_Id = monsterMaster_Id;
+        this.name = name;
+        this.profilePicId = profilePicId;
     }
 
     public Long getMonsterMaster_Id() {

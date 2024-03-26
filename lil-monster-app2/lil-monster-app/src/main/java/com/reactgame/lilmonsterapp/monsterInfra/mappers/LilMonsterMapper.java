@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LilMonsterMapper {
 
-    public LilMonsterRepresentation toRepresentation(LilMonster lilMonsterEntity){
+    public static LilMonsterRepresentation toRepresentation(LilMonster lilMonsterEntity){
 
         LilMonsterRepresentation lilMonsterRepresentation = new LilMonsterRepresentation(
                 lilMonsterEntity.getLilMonster_Id(),
@@ -19,7 +19,7 @@ public class LilMonsterMapper {
                 lilMonsterEntity.getMonsterPicId(),
                 lilMonsterEntity.getMonsterTypePicId(),
                 lilMonsterEntity.getDescription(),
-                lilMonsterEntity.getMonsterMaster(),
+                lilMonsterEntity.getMonsterMasterId(),
                 lilMonsterEntity.getType(),
                 lilMonsterEntity.getWeakness(),
                 lilMonsterEntity.getStrengths()
@@ -28,8 +28,9 @@ public class LilMonsterMapper {
         return lilMonsterRepresentation;
     }
 
-    public LilMonster toEntity(LilMonsterRepresentation lilMonsterRepresentation){
+    public static LilMonster toEntity(LilMonsterRepresentation lilMonsterRepresentation){
         LilMonster lilMonster = new LilMonster(
+                lilMonsterRepresentation.getId(),
                 lilMonsterRepresentation.getName(),
                 lilMonsterRepresentation.getHealthPoints(),
                 lilMonsterRepresentation.getStamina(),
@@ -38,7 +39,7 @@ public class LilMonsterMapper {
                 lilMonsterRepresentation.getMonsterPicId(),
                 lilMonsterRepresentation.getMonsterTypePicId(),
                 lilMonsterRepresentation.getDescription(),
-                lilMonsterRepresentation.getMonsterMaster()
+                lilMonsterRepresentation.getMonsterMasterId()
         );
         return lilMonster;
     }

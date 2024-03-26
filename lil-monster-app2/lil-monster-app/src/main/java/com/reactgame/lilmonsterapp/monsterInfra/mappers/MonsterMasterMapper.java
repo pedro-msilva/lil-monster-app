@@ -7,19 +7,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class MonsterMasterMapper {
 
-    public MonsterMasterRepresentation toRepresentation(MonsterMaster monsterMaster){
+    public static MonsterMasterRepresentation toRepresentation(MonsterMaster monsterMaster){
 
         MonsterMasterRepresentation monsterMasterRepresentation = new MonsterMasterRepresentation(
-            monsterMaster.getMonsterMaster_Id(),monsterMaster.getName(),monsterMaster.getProfilePicId(),monsterMaster.getLilMonsters()
+            monsterMaster.getMonsterMaster_Id(),monsterMaster.getName(),monsterMaster.getProfilePicId()
         );
         return monsterMasterRepresentation;
 
     }
 
-    public MonsterMaster toEntity(MonsterMasterRepresentation monsterMasterRepresentation){
+    public static MonsterMaster toEntity(MonsterMasterRepresentation monsterMasterRepresentation){
 
         MonsterMaster monsterMaster = new MonsterMaster(
-                monsterMasterRepresentation.getName(),monsterMasterRepresentation.getProfilePicId(),monsterMasterRepresentation.getLilMonsters()
+                monsterMasterRepresentation.getId(),monsterMasterRepresentation.getName(),monsterMasterRepresentation.getProfilePicId()
         );
         return monsterMaster;
 

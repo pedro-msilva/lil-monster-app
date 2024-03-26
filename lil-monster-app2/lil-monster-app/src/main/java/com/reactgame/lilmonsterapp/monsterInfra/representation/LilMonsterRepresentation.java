@@ -12,8 +12,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class LilMonsterRepresentation implements LilMonsterActions {
 
     private Long id;
@@ -25,12 +23,25 @@ public class LilMonsterRepresentation implements LilMonsterActions {
     private String monsterPicId;
     private String monsterTypePicId;
     private String description;
-    private String monsterMaster;
+    private Long monsterMasterId;
     private String type;
     private List<String> weakness;
     private List<String> strengths;
 
-    public LilMonsterRepresentation(Long id,String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, MonsterMaster monsterMaster, String type, List<String> weakness, List<String> strengths) {
+    public LilMonsterRepresentation(Long id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId, String type, List<String> weakness, List<String> strengths) {
+        this.id = id;
+        this.name = name;
+        this.healthPoints = healthPoints;
+        this.stamina = stamina;
+        this.attackPoints = attackPoints;
+        this.defencePoints = defencePoints;
+        this.monsterPicId = monsterPicId;
+        this.monsterTypePicId = monsterTypePicId;
+        this.description = description;
+        this.monsterMasterId = monsterMasterId;
+        this.type = type;
+        this.weakness = weakness;
+        this.strengths = strengths;
     }
 
     public Long getId() {
@@ -105,12 +116,12 @@ public class LilMonsterRepresentation implements LilMonsterActions {
         this.description = description;
     }
 
-    public String getMonsterMaster() {
-        return monsterMaster;
+    public Long getMonsterMasterId() {
+        return monsterMasterId;
     }
 
-    public void setMonsterMaster(String monsterMaster) {
-        this.monsterMaster = monsterMaster;
+    public void setMonsterMasterId(Long monsterMasterId) {
+        this.monsterMasterId = monsterMasterId;
     }
 
     public String getType() {

@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Table(name="monsters")
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class LilMonster extends MonsterType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +23,37 @@ public class LilMonster extends MonsterType {
     private String monsterPicId;
     private String monsterTypePicId;
     private String description;
-    @ManyToOne
-    @JoinColumn(name="monsterMaster_id")
-    private MonsterMaster monsterMaster;
+    private Long monsterMasterId;
 
-    public LilMonster(String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, String monsterMaster) {
+    public LilMonster(String type, List<String> weakness, List<String> strengths, Long lilMonster_Id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId) {
+        super(type, weakness, strengths);
+        this.lilMonster_Id = lilMonster_Id;
+        this.name = name;
+        this.healthPoints = healthPoints;
+        this.stamina = stamina;
+        this.attackPoints = attackPoints;
+        this.defencePoints = defencePoints;
+        this.monsterPicId = monsterPicId;
+        this.monsterTypePicId = monsterTypePicId;
+        this.description = description;
+        this.monsterMasterId = monsterMasterId;
+    }
+
+    public LilMonster(Long lilMonster_Id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId) {
+
+        this.lilMonster_Id = lilMonster_Id;
+        this.name = name;
+        this.healthPoints = healthPoints;
+        this.stamina = stamina;
+        this.attackPoints = attackPoints;
+        this.defencePoints = defencePoints;
+        this.monsterPicId = monsterPicId;
+        this.monsterTypePicId = monsterTypePicId;
+        this.description = description;
+        this.monsterMasterId = monsterMasterId;
+    }
+
+    public LilMonster(){
         super();
     }
 
@@ -102,11 +129,11 @@ public class LilMonster extends MonsterType {
         this.description = description;
     }
 
-    public MonsterMaster getMonsterMaster() {
-        return monsterMaster;
+    public Long getMonsterMasterId() {
+        return monsterMasterId;
     }
 
-    public void setMonsterMaster(MonsterMaster monsterMaster) {
-        this.monsterMaster = monsterMaster;
+    public void setMonsterMaster(Long monsterMaster) {
+        this.monsterMasterId = monsterMasterId;
     }
 }

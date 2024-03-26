@@ -2,6 +2,7 @@ package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
 import com.reactgame.lilmonsterapp.core.entity.LilMonster;
 import com.reactgame.lilmonsterapp.monsterInfra.monstersInterfaces.MonsterMasterActions;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class MonsterMasterRepresentation implements MonsterMasterActions {
 
     private Long id;
@@ -18,7 +18,10 @@ public class MonsterMasterRepresentation implements MonsterMasterActions {
     private String profilePicId;
     private List<LilMonster> lilMonsters;
 
-    public MonsterMasterRepresentation(Long id,String name, String profilePicId, List<LilMonster> lilMonsters) {
+    public MonsterMasterRepresentation(Long id, String name, String profilePicId) {
+        this.id = id;
+        this.name = name;
+        this.profilePicId = profilePicId;
     }
 
     @Override

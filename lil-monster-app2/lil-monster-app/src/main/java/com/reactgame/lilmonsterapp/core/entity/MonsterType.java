@@ -19,6 +19,9 @@ public class MonsterType {
     private List<String> strengths;
 
     public MonsterType(String type, List<String> weakness, List<String> strengths) {
+        this.type = type;
+        this.weakness = weakness;
+        this.strengths = strengths;
     }
 
     public MonsterType() {
