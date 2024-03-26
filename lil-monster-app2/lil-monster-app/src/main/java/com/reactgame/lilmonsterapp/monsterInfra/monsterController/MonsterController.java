@@ -43,5 +43,11 @@ public class MonsterController {
             return new ResponseEntity<>(monsterService.atualizarMonstro(novoMonstro),HttpStatus.OK);
     }
 
+    //deletar monster
+    @DeleteMapping(value="/deletarMonster/{monsterId}")
+    public  ResponseEntity<String> deletarMonster(@PathVariable Long monsterId){
+        return new ResponseEntity<>(monsterService.deletarMonster(monsterId), HttpStatus.OK);
+    }
+
 
 }

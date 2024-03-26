@@ -6,6 +6,7 @@ import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.mappers.LilMonsterMapper;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -66,5 +67,16 @@ public class MonsterServiceImpl implements MonsterService{
 
         var monstroSalvo = monsterRepository.save(monsterMapper.toEntity(novoMonstro));
         return monsterMapper.toRepresentation(monstroSalvo);
+    }
+
+    @Override
+    public String deletarMonster(Long monsterId) {
+        try {
+            monsterRepository.deleteById(monsterId);
+            return "Monster Deletado com sucesso";
+        }
+        catch (EmptyResultDataAccessException e) {
+            throw new MonstroExceptions("Nenhuma vacation com esse ID foi encontrada.");
+        }
     }
 }

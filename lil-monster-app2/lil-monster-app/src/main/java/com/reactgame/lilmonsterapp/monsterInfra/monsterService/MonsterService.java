@@ -12,4 +12,5 @@ public interface MonsterService {
     public LilMonsterRepresentation obterMonstro(Long monsterId);
     public LilMonsterRepresentation atualizarMonstro(LilMonsterRepresentation novoMonstro);
     public LilMonsterRepresentation criarMonstro (LilMonsterRepresentation novoMonstro);
+    public String deletarMonster(Long monsterId);
 }
