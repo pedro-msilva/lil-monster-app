@@ -6,6 +6,7 @@ import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.mappers.MonsterMasterMapper;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterMasterRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -59,5 +60,17 @@ public class MonsterMasterImpl implements MonsterMasterService {
         var masterAtualizado = monsterMasterMapper.toEntity(novoMaster);
 
         return monsterMasterMapper.toRepresentation(monsterMasterRepository.save(masterAtualizado));
+    }
+
+    @Override
+    public String deletarMaster(Long monsterMasterId) {
+
+        try {
+            monsterMasterRepository.deleteById(monsterMasterId);
+            return "Master Deletado com sucesso";
+        }
+        catch (EmptyResultDataAccessException e) {
+            throw new MonstroExceptions("Nenhuma vacation com esse ID foi encontrada.");
+        }
     }
 }

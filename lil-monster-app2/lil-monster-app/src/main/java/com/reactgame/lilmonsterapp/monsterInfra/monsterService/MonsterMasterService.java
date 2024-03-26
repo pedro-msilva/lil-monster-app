@@ -12,5 +12,6 @@ public interface MonsterMasterService {
     public MonsterMasterRepresentation obterMaster(Long monsterMasterId);
     public MonsterMasterRepresentation criarMaster(MonsterMasterRepresentation novoMonstro);
     public MonsterMasterRepresentation atualizarMaster(MonsterMasterRepresentation novoMonstro);
+    public String deletarMaster(Long monsterMasterId);
 
 }

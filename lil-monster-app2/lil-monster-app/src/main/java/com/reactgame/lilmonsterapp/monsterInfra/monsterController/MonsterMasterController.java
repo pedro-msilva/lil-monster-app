@@ -41,4 +41,10 @@ public class MonsterMasterController {
     public  ResponseEntity<MonsterMasterRepresentation> atualizarMaster(@RequestBody MonsterMasterRepresentation novoMaster){
         return new ResponseEntity<>(monsterMasterService.atualizarMaster(novoMaster), HttpStatus.OK);
     }
+
+    //deletar master
+    @DeleteMapping(value="/deletarMaster/{monsterMasterId}")
+    public  ResponseEntity<String> deletarMaster(@PathVariable Long monsterMasterId){
+        return new ResponseEntity<>(monsterMasterService.deletarMaster(monsterMasterId), HttpStatus.OK);
+    }
 }

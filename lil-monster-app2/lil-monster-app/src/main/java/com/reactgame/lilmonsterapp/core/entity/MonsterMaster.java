@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class MonsterMaster{
 
     @Id
@@ -26,6 +27,11 @@ public class MonsterMaster{
 
     public MonsterMaster(Long monsterMaster_Id, String name, String profilePicId) {
         this.monsterMaster_Id = monsterMaster_Id;
+        this.name = name;
+        this.profilePicId = profilePicId;
+    }
+
+    public MonsterMaster(String name, String profilePicId) {
         this.name = name;
         this.profilePicId = profilePicId;
     }
