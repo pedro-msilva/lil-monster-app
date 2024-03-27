@@ -1,45 +1,29 @@
-package com.reactgame.lilmonsterapp.core.entity;
+package com.reactgame.lilmonsterapp.monsterInfra.representation;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import com.reactgame.lilmonsterapp.core.entity.LilMonster;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name="monster_type")
-@Entity
-@Getter
-@Setter
-public class MonsterType {
+public class MonsterTypeRepresentation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long monsterTypeId;
     private String type;
     private List<String> weakness;
     private List<String> strengths;
-    @OneToMany(mappedBy = "monsterTypeId", cascade = CascadeType.ALL)
-    private List<LilMonster> lilMonsters = new ArrayList<>();
+    private List<LilMonster> lilMonsters;
 
-    public MonsterType(String type, List<String> weakness, List<String> strengths) {
-        this.type = type;
-        this.weakness = weakness;
-        this.strengths = strengths;
-    }
-
-    public MonsterType(Long monsterTypeId,String type, List<String> weakness, List<String> strengths) {
+    public MonsterTypeRepresentation(Long monsterTypeId, String type, List<String> weakness, List<String> strengths) {
         this.monsterTypeId = monsterTypeId;
         this.type = type;
         this.weakness = weakness;
         this.strengths = strengths;
     }
 
-    public MonsterType() {
-
-    }
+    public MonsterTypeRepresentation(){}
 
     public Long getMonsterTypeId() {
         return monsterTypeId;
@@ -47,14 +31,6 @@ public class MonsterType {
 
     public void setMonsterTypeId(Long monsterTypeId) {
         this.monsterTypeId = monsterTypeId;
-    }
-
-    public List<LilMonster> getLilMonsters() {
-        return lilMonsters;
-    }
-
-    public void setLilMonsters(List<LilMonster> lilMonsters) {
-        this.lilMonsters = lilMonsters;
     }
 
     public String getType() {
@@ -80,4 +56,13 @@ public class MonsterType {
     public void setStrengths(List<String> strengths) {
         this.strengths = strengths;
     }
+
+    public List<LilMonster> getLilMonsters() {
+        return lilMonsters;
+    }
+
+    public void setLilMonsters(List<LilMonster> lilMonsters) {
+        this.lilMonsters = lilMonsters;
+    }
 }
+

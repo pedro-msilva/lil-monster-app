@@ -20,9 +20,7 @@ public class LilMonsterMapper {
                 lilMonsterEntity.getMonsterTypePicId(),
                 lilMonsterEntity.getDescription(),
                 lilMonsterEntity.getMonsterMasterId(),
-                lilMonsterEntity.getType(),
-                lilMonsterEntity.getWeakness(),
-                lilMonsterEntity.getStrengths()
+                lilMonsterEntity.getMonsterTypeId()
         );
 
         return lilMonsterRepresentation;
@@ -39,7 +37,8 @@ public class LilMonsterMapper {
                 lilMonsterRepresentation.getMonsterPicId(),
                 lilMonsterRepresentation.getMonsterTypePicId(),
                 lilMonsterRepresentation.getDescription(),
-                lilMonsterRepresentation.getMonsterMasterId()
+                lilMonsterRepresentation.getMonsterMasterId(),
+                lilMonsterRepresentation.getMonsterTypeId()
         );
         return lilMonster;
     }

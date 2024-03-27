@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class LilMonster extends MonsterType {
+public class LilMonster {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long lilMonster_Id;
@@ -24,9 +24,9 @@ public class LilMonster extends MonsterType {
     private String monsterTypePicId;
     private String description;
     private Long monsterMasterId;
+    private Long monsterTypeId;
 
-    public LilMonster(String type, List<String> weakness, List<String> strengths, Long lilMonster_Id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId) {
-        super(type, weakness, strengths);
+    public LilMonster(Long lilMonster_Id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId, Long monsterTypeId) {
         this.lilMonster_Id = lilMonster_Id;
         this.name = name;
         this.healthPoints = healthPoints;
@@ -37,24 +37,21 @@ public class LilMonster extends MonsterType {
         this.monsterTypePicId = monsterTypePicId;
         this.description = description;
         this.monsterMasterId = monsterMasterId;
+        this.monsterTypeId = monsterTypeId;
     }
 
-    public LilMonster(Long lilMonster_Id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId) {
+    public LilMonster(){};
 
-        this.lilMonster_Id = lilMonster_Id;
-        this.name = name;
-        this.healthPoints = healthPoints;
-        this.stamina = stamina;
-        this.attackPoints = attackPoints;
-        this.defencePoints = defencePoints;
-        this.monsterPicId = monsterPicId;
-        this.monsterTypePicId = monsterTypePicId;
-        this.description = description;
+    public void setMonsterMasterId(Long monsterMasterId) {
         this.monsterMasterId = monsterMasterId;
     }
 
-    public LilMonster(){
-        super();
+    public Long getMonsterTypeId() {
+        return monsterTypeId;
+    }
+
+    public void setMonsterTypeId(Long monsterTypeId) {
+        this.monsterTypeId = monsterTypeId;
     }
 
     public Long getLilMonster_Id() {

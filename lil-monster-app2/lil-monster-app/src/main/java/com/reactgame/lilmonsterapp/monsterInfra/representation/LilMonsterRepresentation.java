@@ -24,11 +24,9 @@ public class LilMonsterRepresentation implements LilMonsterActions {
     private String monsterTypePicId;
     private String description;
     private Long monsterMasterId;
-    private String type;
-    private List<String> weakness;
-    private List<String> strengths;
+    private Long monsterTypeId;
 
-    public LilMonsterRepresentation(Long id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId, String type, List<String> weakness, List<String> strengths) {
+    public LilMonsterRepresentation(Long id, String name, Integer healthPoints, Integer stamina, Integer attackPoints, Integer defencePoints, String monsterPicId, String monsterTypePicId, String description, Long monsterMasterId, Long monsterTypeId) {
         this.id = id;
         this.name = name;
         this.healthPoints = healthPoints;
@@ -39,9 +37,17 @@ public class LilMonsterRepresentation implements LilMonsterActions {
         this.monsterTypePicId = monsterTypePicId;
         this.description = description;
         this.monsterMasterId = monsterMasterId;
-        this.type = type;
-        this.weakness = weakness;
-        this.strengths = strengths;
+        this.monsterTypeId = monsterTypeId;
+    }
+
+    public LilMonsterRepresentation(){};
+
+    public Long getMonsterTypeId() {
+        return monsterTypeId;
+    }
+
+    public void setMonsterTypeId(Long monsterTypeId) {
+        this.monsterTypeId = monsterTypeId;
     }
 
     public Long getId() {
@@ -122,30 +128,6 @@ public class LilMonsterRepresentation implements LilMonsterActions {
 
     public void setMonsterMasterId(Long monsterMasterId) {
         this.monsterMasterId = monsterMasterId;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<String> getWeakness() {
-        return weakness;
-    }
-
-    public void setWeakness(List<String> weakness) {
-        this.weakness = weakness;
-    }
-
-    public List<String> getStrengths() {
-        return strengths;
-    }
-
-    public void setStrengths(List<String> strengths) {
-        this.strengths = strengths;
     }
 
     @Override
