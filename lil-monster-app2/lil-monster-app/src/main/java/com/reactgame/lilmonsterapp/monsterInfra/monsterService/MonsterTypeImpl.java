@@ -4,13 +4,10 @@ import com.reactgame.lilmonsterapp.core.entity.MonsterType;
 import com.reactgame.lilmonsterapp.core.repository.MonsterTypeRepository;
 import com.reactgame.lilmonsterapp.exception.MonstroExceptions;
 import com.reactgame.lilmonsterapp.monsterInfra.mappers.MonsterTypeMapper;
-import com.reactgame.lilmonsterapp.monsterInfra.representation.LilMonsterRepresentation;
 import com.reactgame.lilmonsterapp.monsterInfra.representation.MonsterTypeRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
