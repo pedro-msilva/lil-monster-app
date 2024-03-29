@@ -5,12 +5,14 @@ import { LILMONSTER, MONSTERMASTER, MONSTERTYPE } from "../../App";
 function MonsterNavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Image
-        className="ms-auto"
-        src="src\assets\img\logos\lilmonsterlogo.png"
-      />
+      <Link className="ms-auto" to={LILMONSTER}>
+        <Image
+          className="big-logo"
+          src="src\assets\img\logos\lilmonsterlogo.png"
+        />
+      </Link>
       <Container>
-        <Navbar.Brand href="#home">Lil Monster</Navbar.Brand>
+        <Navbar.Brand>Lil Monster</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
