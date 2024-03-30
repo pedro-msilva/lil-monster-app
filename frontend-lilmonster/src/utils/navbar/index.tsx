@@ -1,11 +1,11 @@
 import { Navbar, Container, Nav, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { LILMONSTER, MONSTERMASTER, MONSTERTYPE } from "../../App";
+import { HOMEPAGE, LILMONSTER, MONSTERMASTER, MONSTERTYPE } from "../../App";
 
 function MonsterNavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Link className="ms-auto" to={LILMONSTER}>
+      <Link className="ms-auto" to={HOMEPAGE}>
         <Image
           className="big-logo"
           src="src\assets\img\logos\lilmonsterlogo.png"
